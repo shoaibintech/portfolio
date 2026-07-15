@@ -12,6 +12,7 @@ export default function App() {
   const [showPrompt, setShowPrompt] = useState(false);
   useEffect(() => { const sync = () => setPage(pageFromHash()); addEventListener('hashchange', sync); return () => removeEventListener('hashchange', sync); }, []);
   useEffect(() => { document.documentElement.dataset.theme = theme; localStorage.setItem('portfolio-theme', theme); }, [theme]);
+  useEffect(() => { if (['work', 'architecture', 'experience', 'contact'].includes(page)) requestAnimationFrame(() => document.getElementById(page)?.scrollIntoView({ behavior: 'smooth' })); }, [page]);
   useEffect(() => { if (theme === 'dark' && !sessionStorage.getItem('light-prompt-seen')) { const timer = setTimeout(() => setShowPrompt(true), 5000); return () => clearTimeout(timer); } }, [theme]);
   const chooseLight = () => { setTheme('light'); setShowPrompt(false); sessionStorage.setItem('light-prompt-seen', 'true'); };
   const dismissPrompt = () => { setShowPrompt(false); sessionStorage.setItem('light-prompt-seen', 'true'); };

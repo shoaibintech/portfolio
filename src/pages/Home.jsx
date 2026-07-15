@@ -1,3 +1,42 @@
 import ArchitectureLab from '../components/ArchitectureLab.jsx';
-const projects=[['AIO Restaurant Platform','Platform architecture, mobile, integrations','Multi tenant restaurant product covering operations, inventory, accounting, analytics, and third party integrations.','platform'],['LetsData.io','Next.js, performance, SEO','Public product site rebuilt for speed, stronger technical SEO, and maintainable UI.','data'],['SongOven','Commerce, full stack','Music commerce platform for artists to create and sell digital content.','commerce']];
-export default function Home(){return <main><section className="hero shell"><div className="hero-copy"><p className="badge">Senior full stack engineer | Doha, Qatar</p><h1>Building products<br/>that <em>perform.</em></h1><p>I take ambitious web and mobile products from system design to production, with practical backend architecture and AWS at the core.</p><div className="actions"><a className="button yellow" href="#/work">Explore work ↓</a><a className="button" href="mailto:shoaibintech@gmail.com">Start a conversation ↗</a></div></div><div className="portrait"><img src="/assets/shoaib-ali-portrait.png" alt="Portrait of Shoaib Ali"/></div><div className="stats"><b>5+<span>Years shipping production systems</span></b><b>30+<span>Projects delivered end to end</span></b><b>10×<span>Scale enabled for a core platform</span></b></div></section><section className="intro shell"><p className="eyebrow">What I bring</p><h2>Architecture that makes<br/>the next good decision <em>easier.</em></h2><p>My work connects product goals to resilient systems across backend, cloud, frontend, and mobile. I build with ownership, clear trade offs, and operational reality in mind.</p></section><section className="work" id="work"><div className="shell"><p className="eyebrow">Selected work</p><h2>Products built for<br/>real world use.</h2><div className="project-grid">{projects.map(([title,meta,description,kind],index)=><article className={`project ${kind}`} key={title}><div className="project-art"><span>{String(index+1).padStart(2,'0')}</span><b>{title.split(' ')[0]}</b></div><p className="eyebrow">{meta}</p><h3>{title}</h3><p>{description}</p></article>)}</div></div></section><section className="architecture shell" id="architecture"><p className="eyebrow">Architecture lab</p><h2>Systems designed to<br/><em>keep moving.</em></h2><p className="section-copy">Select a layer to see how I think about production systems.</p><ArchitectureLab/></section><section className="skills"><div className="shell"><p className="eyebrow">Core toolkit</p><h2>Backend first.<br/>Cloud fluent.</h2><div className="skills-grid"><div><b>Backend and APIs</b><p>Node.js, NestJS, .NET, REST, GraphQL, Redis, SQS</p></div><div><b>AWS and cloud</b><p>Lambda, ECS, EC2, S3, RDS, CloudWatch, Cognito</p></div><div><b>Data and events</b><p>Kafka, OpenTelemetry, Grafana, Athena, RAG</p></div><div><b>Web and mobile</b><p>React, Next.js, TypeScript, React Native, Redux</p></div></div></div></section><section className="contact"><div className="shell"><p className="eyebrow">Open to the right opportunity</p><h2>Let’s build something<br/><em>that lasts.</em></h2><a className="button yellow" href="mailto:shoaibintech@gmail.com">shoaibintech@gmail.com ↗</a></div></section></main>}
+import '../experience.css';
+
+const projects = [
+  ['AIO Restaurant Platform', 'Platform architecture, mobile, integrations', 'Multi tenant restaurant product covering operations, inventory, accounting, analytics, and third party integrations.', 'platform'],
+  ['LetsData.io', 'Next.js, performance, SEO', 'Public product site rebuilt for speed, stronger technical SEO, and maintainable UI.', 'data'],
+  ['SongOven', 'Commerce, full stack', 'Music commerce platform for artists to create and sell digital content.', 'commerce'],
+];
+
+export default function Home() {
+  return <main>
+    <section className="hero shell">
+      <div className="hero-copy">
+        <p className="badge">Senior full stack engineer | Doha, Qatar</p>
+        <h1>Building products<br />that <em>perform.</em></h1>
+        <p>I take ambitious web and mobile products from system design to production, with practical backend architecture and AWS at the core.</p>
+        <div className="actions"><a className="button yellow" href="#/work">Explore work ↓</a><a className="button" href="mailto:shoaibintech@gmail.com">Start a conversation ↗</a></div>
+      </div>
+      <div className="portrait"><img src="assets/shoaib-ali-portrait.png" alt="Portrait of Shoaib Ali" /></div>
+      <div className="stats"><b>5+<span>Years shipping production systems</span></b><b>30+<span>Projects delivered end to end</span></b><b>10×<span>Scale enabled for a core platform</span></b></div>
+    </section>
+
+    <section className="intro shell"><p className="eyebrow">What I bring</p><h2>Architecture that makes<br />the next good decision <em>easier.</em></h2><p>My work connects product goals to resilient systems across backend, cloud, frontend, and mobile. I build with ownership, clear trade offs, and operational reality in mind.</p></section>
+
+    <section className="work" id="work"><div className="shell"><p className="eyebrow">Selected work</p><h2>Products built for<br />real world use.</h2><div className="project-grid">{projects.map(([title, meta, description, kind], index) => <article className={`project ${kind}`} key={title}><div className="project-art"><span>{String(index + 1).padStart(2, '0')}</span><b>{title.split(' ')[0]}</b></div><p className="eyebrow">{meta}</p><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+
+    <section className="architecture shell" id="architecture"><p className="eyebrow">Architecture lab</p><h2>Systems designed to<br /><em>keep moving.</em></h2><p className="section-copy">Select a layer to see how I think about production systems.</p><ArchitectureLab /></section>
+
+    <section className="experience shell" id="experience">
+      <p className="eyebrow">Career path</p><h2>Building with ownership<br />at every stage.</h2>
+      <div className="experience-list">
+        <article><span>2024 to 2026</span><div><h3>AIO Restaurant Platform</h3><p>Senior Full Stack Engineer</p><p>Led system architecture for a multi tenant restaurant platform across backend, frontend, mobile, and third party integrations. Improved core API response time by 80 percent.</p></div></article>
+        <article><span>2023</span><div><h3>LetsData.io</h3><p>Frontend Engineer</p><p>Rebuilt the public product website in Next.js with better performance, SEO, and maintainability.</p></div></article>
+        <article><span>2022 to 2023</span><div><h3>Esquall Technologies</h3><p>Full Stack Developer</p><p>Built fintech, music commerce, and social products while mentoring engineers and shaping reusable frontend patterns.</p></div></article>
+      </div>
+    </section>
+
+    <section className="skills"><div className="shell"><p className="eyebrow">Core toolkit</p><h2>Backend first.<br />Cloud fluent.</h2><div className="skills-grid"><div><b>Backend and APIs</b><p>Node.js, NestJS, .NET, REST, GraphQL, Redis, SQS</p></div><div><b>AWS and cloud</b><p>Lambda, ECS, EC2, S3, RDS, CloudWatch, Cognito</p></div><div><b>Data and events</b><p>Kafka, OpenTelemetry, Grafana, Athena, RAG</p></div><div><b>Web and mobile</b><p>React, Next.js, TypeScript, React Native, Redux</p></div></div></div></section>
+
+    <section className="contact" id="contact"><div className="shell"><p className="eyebrow">Open to the right opportunity</p><h2>Let’s build something<br /><em>that lasts.</em></h2><a className="button yellow" href="mailto:shoaibintech@gmail.com">shoaibintech@gmail.com ↗</a></div></section>
+  </main>;
+}

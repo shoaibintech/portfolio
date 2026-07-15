@@ -1,0 +1,9 @@
+.experience { padding: 120px 0; background: var(--bg); }
+.experience > h2 { margin: 12px 0 58px; }
+.experience-list { border-top: 1px solid var(--line); }
+.experience-list article { display: grid; grid-template-columns: 18% 1fr; gap: 25px; padding: 29px 0; border-bottom: 1px solid var(--line); }
+.experience-list > article > span { font: 11px "DM Mono", monospace; color: var(--muted); }
+.experience-list h3 { margin: 0; font-size: 34px; letter-spacing: -.04em; }
+.experience-list p { margin: 8px 0; color: var(--muted); line-height: 1.55; }
+.experience-list p + p { max-width: 650px; }
+@media (max-width: 840px) { .experience { padding: 78px 0; } .experience-list article { grid-template-columns: 1fr; gap: 12px; } .experience-list h3 { font-size: 28px; } }
