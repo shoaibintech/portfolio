@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Nav from './components/Nav.jsx';
 import LightPrompt from './components/LightPrompt.jsx';
+import BackToTop from './components/BackToTop.jsx';
 import Home from './pages/Home.jsx';
 import Notes from './pages/Notes.jsx';
 
@@ -18,7 +19,7 @@ export default function App() {
   const dismissPrompt = () => { setShowPrompt(false); sessionStorage.setItem('light-prompt-seen', 'true'); };
   const nav = <Nav theme={theme} onTheme={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />;
   const content = page === 'now' ? <Notes type="now" /> : page === 'blog' ? <Notes type="blog" /> : <Home nav={nav} />;
-  return <>{page === 'now' || page === 'blog' ? nav : null}{content}<Footer />{showPrompt && <LightPrompt onAccept={chooseLight} onDismiss={dismissPrompt} />}</>;
+  return <>{page === 'now' || page === 'blog' ? nav : null}{content}<Footer /><BackToTop />{showPrompt && <LightPrompt onAccept={chooseLight} onDismiss={dismissPrompt} />}</>;
 }
 
 function Footer() { return <footer className="footer wrap"><a className="brand" href="#/"><span>SA</span> SHOAIB ALI</a><p>© {new Date().getFullYear()} Shoaib Ali. Built with intent.</p><div><a href="#/now">Now</a><a href="#/blog">Blog</a><a href="https://www.linkedin.com/in/shoaibintech" target="_blank" rel="noreferrer">LinkedIn</a></div></footer>; }

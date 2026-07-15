@@ -40,6 +40,9 @@
 .prompt > p:not(.eyebrow) { line-height: 1.5; }
 .prompt div { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
 .text-button { border: 0; border-bottom: 1px solid currentColor; padding: 0; color: var(--ink); background: transparent; font-weight: 700; cursor: pointer; }
+.back-to-top { position: fixed; right: 26px; bottom: 26px; z-index: 15; display: grid; width: 44px; height: 44px; place-items: center; border: 1.5px solid var(--ink); border-radius: 50%; background: var(--yellow); color: #240b08; box-shadow: 3px 3px 0 var(--ink); cursor: pointer; font: 700 25px/1 "DM Sans", sans-serif; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .2s ease, transform .2s ease, box-shadow .2s ease; }
+.back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 1px 1px 0 var(--ink); transform: translate(2px, 2px); }
 
 /* Now and Blog share the home page's editorial grid and type rhythm. */
 .notes { min-height: calc(100vh - 150px); padding: 100px 0 120px; }
@@ -66,4 +69,4 @@
 [data-theme="dark"] .note-grid p { color: #d6d1c7; }
 [data-theme="dark"] .notes-now .note-grid article:nth-child(1) { box-shadow: inset 8px 0 0 var(--yellow); }
 
-@media (max-width: 760px) { .notes { padding: 68px 0 84px; } .notes-hero { padding: 18px 0 52px; } .notes .lead { font-size: 17px; } .note-grid { grid-template-columns: 1fr; } .note-grid article, .note-grid article:nth-child(even) { min-height: auto; padding: 28px 0 34px; border-left: 0; } .note-grid h2 { margin-top: 32px; } .notes-now .note-grid article, .notes-now .note-grid article:nth-child(even) { padding-left: 20px; } .note-callout { margin-top: 55px; padding: 34px 24px; } }
+@media (max-width: 760px) { .notes { padding: 68px 0 84px; } .notes-hero { padding: 18px 0 52px; } .notes .lead { font-size: 17px; } .note-grid { grid-template-columns: 1fr; } .note-grid article, .note-grid article:nth-child(even) { min-height: auto; padding: 28px 0 34px; border-left: 0; } .note-grid h2 { margin-top: 32px; } .notes-now .note-grid article, .notes-now .note-grid article:nth-child(even) { padding-left: 20px; } .note-callout { margin-top: 55px; padding: 34px 24px; } .back-to-top { right: 17px; bottom: 17px; width: 40px; height: 40px; } }
