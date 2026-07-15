@@ -2,15 +2,24 @@
 @import url('../outputs/portfolio/styles.css');
 
 .theme-button { border: 1.5px solid var(--ink); background: var(--yellow); color: var(--ink); width: 38px; height: 38px; border-radius: 50%; font-weight: 700; cursor: pointer; }
-[data-theme="dark"] body { --cream: #181511; --ink: #f7ebca; --yellow: #ffe060; --rust: #ed7ca6; --pink: #7d4458; --line: rgba(247,235,202,.28); background: var(--cream); }
-[data-theme="dark"] .hero { background: radial-gradient(circle at 50% 72%, #3f3324 0 16%, transparent 37%), var(--cream); }
-[data-theme="dark"] .work-section { background: #0e0c0a; }
-[data-theme="dark"] .architecture { background: #24201a; }
-[data-theme="dark"] .stack { background: #4d322b; }
-[data-theme="dark"] .contact { background: #764637; }
-[data-theme="dark"] .architecture-lab { background: #100d0d; }
-[data-theme="dark"] .architecture-panel { background: #29231e; }
-[data-theme="dark"] .architecture-panel > p:not(.panel-index), [data-theme="dark"] .intro-grid p, [data-theme="dark"] .timeline p:not(.role), [data-theme="dark"] .skills-grid p { color: #dfcdb2; }
+[data-theme="dark"] body { --cream: #0b0d10; --ink: #f7f2e8; --yellow: #ffe064; --rust: #ef8fbb; --pink: #7d4458; --line: rgba(247,242,232,.28); background: var(--cream); }
+[data-theme="dark"] .hero { background: radial-gradient(circle at 50% 72%, #252019 0 16%, transparent 37%), var(--cream); }
+[data-theme="dark"] .work-section { background: #060709; }
+[data-theme="dark"] .architecture { background: #101216; }
+[data-theme="dark"] .stack { background: #181318; }
+[data-theme="dark"] .contact { background: #2e1e28; }
+[data-theme="dark"] .architecture-lab { background: #050608; }
+[data-theme="dark"] .architecture-panel { background: #171a1f; }
+[data-theme="dark"] .hero-copy,
+[data-theme="dark"] .architecture-heading > p:last-child,
+[data-theme="dark"] .architecture-panel > p:not(.panel-index),
+[data-theme="dark"] .intro-grid p,
+[data-theme="dark"] .timeline p:not(.role),
+[data-theme="dark"] .skills-grid p,
+[data-theme="dark"] .now-grid p,
+[data-theme="dark"] .notes-intro,
+[data-theme="dark"] .principles p { color: #d6d1c7; }
+[data-theme="dark"] .filter:not(.active) { color: #f7f2e8; }
 [data-theme="dark"] .yellow,
 [data-theme="dark"] .nav-links a,
 [data-theme="dark"] .filter.active,
