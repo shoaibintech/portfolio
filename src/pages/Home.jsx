@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
 const projects = [
-  { title: 'AIO Restaurant Platform', meta: 'Platform architecture · Mobile · Integrations', detail: 'Multi tenant restaurant ecosystem spanning inventory, accounting, analytics, operations, and third party integrations.', category: 'platform mobile', art: <><span className="orb" /><span className="device"><i /><i /><i /><b>aio</b><small>Everything a restaurant<br />needs to run smarter.</small></span></> },
-  { title: 'LetsData.io', meta: 'Next.js · Performance · SEO', detail: 'A public facing product site rebuilt from the ground up for faster load times and stronger technical SEO.', category: 'ai platform', art: <span className="poster">LET’S<span>DATA</span><small>Public data,<br />made useful.</small></span>, color: 'blue' },
-  { title: 'Imateam', meta: 'React Native · Social', detail: 'A social platform for players to connect, manage profiles, coordinate activities, and build community.', category: 'mobile', art: <span className="team-mark">iM<br />TEAM<small>find your people.<br />play together.</small></span>, color: 'pink' },
+  { title: 'AIO Restaurant Platform', meta: 'Platform architecture · Mobile · Integrations', detail: 'All in one AI restaurant management ecosystem serving 30 plus live restaurant locations across operations, inventory, accounting, analytics, and integrations.', category: 'platform mobile', art: <><span className="orb" /><span className="device"><i /><i /><i /><b>aio</b><small>Everything a restaurant<br />needs to run smarter.</small></span></> },
+  { title: 'Ultrasound.ai', meta: 'AI · Machine learning · Healthcare', detail: 'AI powered ultrasound platform for early stage pregnancy prediction using machine learning.', category: 'ai platform', art: <span className="scan">ULTRA<br /><b>SOUND</b><small>Machine learning for<br />earlier pregnancy insight.</small></span>, color: 'coral' },
+  { title: 'LetsData.io', meta: 'Next.js · Performance · UX', detail: 'Public facing product site rebuilt end to end in Next.js for improved performance, UX, and maintainability.', category: 'ai platform', art: <span className="poster">LET’S<span>DATA</span><small>Public data,<br />made useful.</small></span>, color: 'blue' },
+  { title: 'Imateam', meta: 'React Native · Social', detail: 'Social platform enabling players to connect, collaborate, manage profiles, and build community.', category: 'mobile', art: <span className="team-mark">iM<br />TEAM<small>find your people.<br />play together.</small></span>, color: 'pink' },
+  { title: 'Healing Trauma', meta: 'Research platform · Healthcare', detail: 'Research platform supporting licensed clinicians and researchers studying trauma.', category: 'ai platform', art: <span className="ticket">HEALING<small>Research tools for<br />care and understanding.</small></span>, color: 'mint' },
 ];
 
 const architecture = {
