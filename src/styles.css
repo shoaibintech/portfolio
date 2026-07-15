@@ -20,6 +20,10 @@
 [data-theme="dark"] .notes-intro,
 [data-theme="dark"] .principles p { color: #d6d1c7; }
 [data-theme="dark"] .filter:not(.active) { color: #f7f2e8; }
+[data-theme="dark"] .work-section { color: #f7f2e8; }
+[data-theme="dark"] .work-section .eyebrow,
+[data-theme="dark"] .project-meta h3,
+[data-theme="dark"] .project-meta > span { color: #f7f2e8; }
 [data-theme="dark"] .yellow,
 [data-theme="dark"] .nav-links a,
 [data-theme="dark"] .filter.active,
