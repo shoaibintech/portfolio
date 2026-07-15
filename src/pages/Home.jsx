@@ -22,7 +22,7 @@ export default function Home({ nav }) {
   const active = architecture[layer];
   return <main>
     <section className="hero" id="home">
-      {nav}<div className="nav-spacer" />
+      {nav}
       <div className="hero-content wrap"><p className="eyebrow rust">Senior full stack engineer · Doha, Qatar</p><h1>Building products<br />that <em>perform.</em></h1><p className="hero-copy">I’m Shoaib Ali, a product focused engineer who takes ambitious web and mobile products from system design to production.</p><div className="hero-actions"><a className="button yellow" href="#/work">Explore my work <b>↓</b></a><a className="button dark" href="mailto:shoaibintech@gmail.com">Let’s talk <b>↗</b></a></div></div>
       <div className="code-card image-left">const product = {'{'}<br />&nbsp;reliable: <b>true</b>,<br />&nbsp;scalable: <b>true</b>,<br />&nbsp;human: <b>true</b><br />{'}'}</div>
       <div className="hero-image portrait image-right"><img src="assets/shoaib-ali-portrait.png" alt="Portrait of Shoaib Ali" /></div>
