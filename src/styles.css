@@ -11,6 +11,16 @@
 [data-theme="dark"] .architecture-lab { background: #100d0d; }
 [data-theme="dark"] .architecture-panel { background: #29231e; }
 [data-theme="dark"] .architecture-panel > p:not(.panel-index), [data-theme="dark"] .intro-grid p, [data-theme="dark"] .timeline p:not(.role), [data-theme="dark"] .skills-grid p { color: #dfcdb2; }
+[data-theme="dark"] .yellow,
+[data-theme="dark"] .nav-links a,
+[data-theme="dark"] .filter.active,
+[data-theme="dark"] .filter:hover,
+[data-theme="dark"] .theme-button,
+[data-theme="dark"] .stats div,
+[data-theme="dark"] .project-art,
+[data-theme="dark"] .arch-node,
+[data-theme="dark"] .now-quote,
+[data-theme="dark"] .rust { color: #240b08; }
 .prompt-backdrop { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 24px; background: rgba(0,0,0,.62); }
 .prompt { width: min(470px, 100%); padding: 36px; border: 2px solid var(--ink); background: var(--cream); box-shadow: 9px 9px 0 var(--yellow); }
 .prompt h2 { font-size: 48px; line-height: .95; }
