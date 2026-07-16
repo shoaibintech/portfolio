@@ -1,13 +1,13 @@
 const POSTHOG_KEY = 'phc_rKMsGuyQKFjSe5AD9ZobSmHNWygBsKUEZ6unmttUhhWM';
 const POSTHOG_HOST = 'https://us.i.posthog.com';
-const CONSENT_KEY = 'portfolio-analytics-consent';
+const OPT_OUT_KEY = 'portfolio-analytics-disabled';
 let loader;
 let initialized = false;
 
-export const hasAnalyticsConsent = () => typeof window !== 'undefined' && localStorage.getItem(CONSENT_KEY) === 'granted';
+export const isAnalyticsDisabled = () => typeof window !== 'undefined' && localStorage.getItem(OPT_OUT_KEY) === 'true';
 
 export function initAnalytics() {
-  if (!hasAnalyticsConsent()) return Promise.resolve(null);
+  if (isAnalyticsDisabled()) return Promise.resolve(null);
   if (initialized && window.posthog) return Promise.resolve(window.posthog);
   if (loader) return loader;
 
@@ -34,8 +34,12 @@ export function initAnalytics() {
 }
 
 export function capture(event, properties = {}) {
-  if (!hasAnalyticsConsent()) return;
+  if (isAnalyticsDisabled()) return;
   initAnalytics().then((posthog) => posthog?.capture(event, properties));
 }
 
-export { CONSENT_KEY };
+export function setAnalyticsDisabled(disabled) {
+  localStorage.setItem(OPT_OUT_KEY, String(disabled));
+  if (disabled) window.posthog?.opt_out_capturing();
+  else window.posthog?.opt_in_capturing();
+}
