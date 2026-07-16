@@ -14,7 +14,7 @@ export default function App() {
   useEffect(() => { const sync = () => setPage(pageFromHash()); addEventListener('hashchange', sync); return () => removeEventListener('hashchange', sync); }, []);
   useEffect(() => { document.documentElement.dataset.theme = theme; localStorage.setItem('portfolio-theme', theme); }, [theme]);
   useEffect(() => { if (['work', 'architecture', 'experience', 'contact'].includes(page)) requestAnimationFrame(() => document.getElementById(page)?.scrollIntoView({ behavior: 'smooth' })); }, [page]);
-  useEffect(() => { if (theme === 'dark' && !sessionStorage.getItem('light-prompt-seen')) { const timer = setTimeout(() => setShowPrompt(true), 5000); return () => clearTimeout(timer); } }, [theme]);
+  useEffect(() => { if (theme === 'dark' && window.innerWidth > 760 && !sessionStorage.getItem('light-prompt-seen')) { const timer = setTimeout(() => setShowPrompt(true), 5000); return () => clearTimeout(timer); } }, [theme]);
   const chooseLight = () => { setTheme('light'); setShowPrompt(false); sessionStorage.setItem('light-prompt-seen', 'true'); };
   const dismissPrompt = () => { setShowPrompt(false); sessionStorage.setItem('light-prompt-seen', 'true'); };
   const nav = <Nav theme={theme} onTheme={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />;

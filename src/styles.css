@@ -70,3 +70,16 @@
 [data-theme="dark"] .notes-now .note-grid article:nth-child(1) { box-shadow: inset 8px 0 0 var(--yellow); }
 
 @media (max-width: 760px) { .notes { padding: 68px 0 84px; } .notes-hero { padding: 18px 0 52px; } .notes .lead { font-size: 17px; } .note-grid { grid-template-columns: 1fr; } .note-grid article, .note-grid article:nth-child(even) { min-height: auto; padding: 28px 0 34px; border-left: 0; } .note-grid h2 { margin-top: 32px; } .notes-now .note-grid article, .notes-now .note-grid article:nth-child(even) { padding-left: 20px; } .note-callout { margin-top: 55px; padding: 34px 24px; } .back-to-top { right: 17px; bottom: 17px; width: 40px; height: 40px; } }
+
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  .nav { gap: 10px; }
+  .nav-links { z-index: 10; top: 58px; right: 0; width: min(230px, calc(100vw - 36px)); padding: 12px; box-shadow: 5px 5px 0 var(--ink); }
+  .nav-links a { width: 100%; padding: 12px 15px; }
+  .menu-toggle { flex: 0 0 auto; }
+  .hero { min-height: 1080px; }
+  .hero-content { z-index: 3; padding-top: 88px; }
+  .hero-copy { max-width: 320px; font-size: 15px; }
+  .hero-image, .code-card { z-index: 1; top: 685px; }
+  .stats { bottom: -15px; z-index: 2; }
+}
