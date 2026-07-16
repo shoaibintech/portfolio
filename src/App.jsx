@@ -11,7 +11,7 @@ const pageFromHash = () => location.hash.replace('#/', '') || 'home';
 
 export default function App() {
   const [page, setPage] = useState(pageFromHash());
-  const [theme, setTheme] = useState(localStorage.getItem('portfolio-theme') || 'dark');
+  const [theme, setTheme] = useState(localStorage.getItem('portfolio-theme') || 'light');
   const [showPrompt, setShowPrompt] = useState(false);
   const [consentReady, setConsentReady] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(hasAnalyticsConsent());
@@ -40,19 +40,19 @@ export default function App() {
   useEffect(() => { if (['work', 'architecture', 'experience', 'contact'].includes(page)) requestAnimationFrame(() => document.getElementById(page)?.scrollIntoView({ behavior: 'smooth' })); }, [page]);
   useEffect(() => {
     if (localStorage.getItem('portfolio-analytics-consent')) return;
-    if (theme === 'dark' && window.innerWidth > 760 && !sessionStorage.getItem('light-prompt-seen')) {
+    if (theme === 'light' && window.innerWidth > 760 && !sessionStorage.getItem('light-prompt-seen')) {
       const timer = setTimeout(() => setShowPrompt(true), 3500);
       return () => clearTimeout(timer);
     }
     const timer = setTimeout(() => setConsentReady(true), 1200);
     return () => clearTimeout(timer);
   }, [theme]);
-  const chooseLight = () => { setTheme('light'); capture('theme_changed', { theme: 'light', source: 'prompt' }); setShowPrompt(false); setConsentReady(true); sessionStorage.setItem('light-prompt-seen', 'true'); };
+  const chooseDark = () => { setTheme('dark'); capture('theme_changed', { theme: 'dark', source: 'prompt' }); setShowPrompt(false); setConsentReady(true); sessionStorage.setItem('light-prompt-seen', 'true'); };
   const dismissPrompt = () => { setShowPrompt(false); setConsentReady(true); sessionStorage.setItem('light-prompt-seen', 'true'); };
   const toggleTheme = () => { const nextTheme = theme === 'dark' ? 'light' : 'dark'; setTheme(nextTheme); capture('theme_changed', { theme: nextTheme, source: 'toggle' }); };
   const nav = <Nav theme={theme} onTheme={toggleTheme} />;
   const content = page === 'now' ? <Notes type="now" /> : page === 'blog' ? <Notes type="blog" /> : <Home nav={nav} />;
-  return <>{page === 'now' || page === 'blog' ? nav : null}{content}<Footer /><BackToTop />{consentReady && <AnalyticsConsent onChange={setAnalyticsEnabled} />}{showPrompt && <LightPrompt onAccept={chooseLight} onDismiss={dismissPrompt} />}</>;
+  return <>{page === 'now' || page === 'blog' ? nav : null}{content}<Footer /><BackToTop />{consentReady && <AnalyticsConsent onChange={setAnalyticsEnabled} />}{showPrompt && <LightPrompt onAccept={chooseDark} onDismiss={dismissPrompt} />}</>;
 }
 
 function Footer() { return <footer className="footer wrap"><a className="brand" href="#/"><span>SA</span> SHOAIB ALI</a><p>© {new Date().getFullYear()} Shoaib Ali. Built with intent.</p><div><a href="#/now" onClick={() => capture('footer_link_clicked', { target: 'now' })}>Now</a><a href="#/blog" onClick={() => capture('footer_link_clicked', { target: 'blog' })}>Blog</a><a href="https://www.linkedin.com/in/shoaibintech" target="_blank" rel="noreferrer" onClick={() => capture('outbound_link_clicked', { target: 'linkedin' })}>LinkedIn</a></div></footer>; }
