@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import InquiryForm from '../components/InquiryForm.jsx';
+import { capture } from '../lib/analytics.js';
 
 const projects = [
   { title: 'AIO Restaurant Platform', url: 'https://www.aioapp.com/', meta: 'Platform architecture · Mobile · Integrations', detail: 'All in one AI restaurant management ecosystem serving 30 plus live restaurant locations across operations, inventory, accounting, analytics, and integrations.', category: 'platform mobile', art: <><span className="orb" /><span className="device"><i /><i /><i /><b>aio</b><small>Everything a restaurant<br />needs to run smarter.</small></span></> },
@@ -23,7 +25,7 @@ export default function Home({ nav }) {
   return <main>
     <section className="hero" id="home">
       {nav}
-      <div className="hero-content wrap"><p className="eyebrow rust">Senior full stack engineer · Doha, Qatar</p><h1>Building products<br />that <em>perform.</em></h1><p className="hero-copy">I’m Shoaib Ali, a product focused engineer who takes ambitious web and mobile products from system design to production.</p><div className="hero-actions"><a className="button yellow" href="#/work">Explore my work <b>↓</b></a><a className="button dark" href="mailto:shoaibintech@gmail.com">Let’s talk <b>↗</b></a></div></div>
+      <div className="hero-content wrap"><p className="eyebrow rust">Senior full stack engineer · Doha, Qatar</p><h1>Building products<br />that <em>perform.</em></h1><p className="hero-copy">I’m Shoaib Ali, a product focused engineer who takes ambitious web and mobile products from system design to production.</p><div className="hero-actions"><a className="button yellow" href="#/work">Explore my work <b>↓</b></a><a className="button dark" href="assets/shoaib-ali-resume.pdf" target="_blank" rel="noreferrer" onClick={() => capture('resume_viewed', { source: 'hero' })}>View resume <b>↗</b></a></div></div>
       <div className="code-card image-left">const product = {'{'}<br />&nbsp;reliable: <b>true</b>,<br />&nbsp;scalable: <b>true</b>,<br />&nbsp;human: <b>true</b><br />{'}'}</div>
       <div className="hero-image portrait image-right"><img src="assets/shoaib-ali-portrait.png" alt="Portrait of Shoaib Ali" /></div>
       <div className="stats wrap"><div><strong>5+</strong><span>Years shipping<br />production systems</span></div><div><strong>30+</strong><span>Client projects<br />delivered end to end</span></div><div><strong>10×</strong><span>Scale enabled<br />for a core platform</span></div></div>
@@ -39,6 +41,6 @@ export default function Home({ nav }) {
 
     <section className="stack" id="stack"><div className="wrap"><div className="stack-heading"><p className="eyebrow">Technical toolkit</p><h2>Architecture led,<br />product minded.</h2></div><div className="skills-grid"><article><span>01</span><h3>Backend & APIs</h3><p>Node.js · NestJS · .NET · REST · GraphQL · Redis · SQS</p></article><article><span>02</span><h3>AWS & cloud</h3><p>Lambda · ECS · EC2 · S3 · RDS · CloudWatch · Cognito · Azure</p></article><article><span>03</span><h3>Data & events</h3><p>Kafka · OpenTelemetry · Grafana · Redshift · Athena · RAG</p></article><article><span>04</span><h3>Frontend & mobile</h3><p>React · Next.js · TypeScript · React Native · Redux · Tailwind</p></article></div></div></section>
 
-    <section className="contact" id="contact"><div className="wrap contact-inner"><p className="eyebrow">Open to the right opportunity</p><h2>Let’s build something<br /><span>that lasts.</span></h2><a className="button yellow" href="mailto:shoaibintech@gmail.com">shoaibintech@gmail.com <b>↗</b></a></div></section>
+    <section className="contact" id="contact"><div className="wrap contact-inner"><p className="eyebrow">Open to the right opportunity</p><h2>Let’s build something<br /><span>that lasts.</span></h2><div className="contact-actions"><a className="button yellow" href="assets/shoaib-ali-resume.pdf" download onClick={() => capture('resume_downloaded', { source: 'contact' })}>Download resume <b>↓</b></a><a className="text-link" href="assets/shoaib-ali-resume.pdf" target="_blank" rel="noreferrer" onClick={() => capture('resume_viewed', { source: 'contact' })}>View in browser <b>↗</b></a></div><InquiryForm /></div></section>
   </main>;
 }

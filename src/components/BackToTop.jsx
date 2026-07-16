@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { capture } from '../lib/analytics.js';
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
@@ -10,5 +11,5 @@ export default function BackToTop() {
     return () => window.removeEventListener('scroll', update);
   }, []);
 
-  return <button className={`back-to-top ${visible ? 'is-visible' : ''}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Back to top">↑</button>;
+  return <button className={`back-to-top ${visible ? 'is-visible' : ''}`} onClick={() => { capture('back_to_top_clicked'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} aria-label="Back to top">↑</button>;
 }
