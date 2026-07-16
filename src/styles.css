@@ -43,6 +43,11 @@
 .back-to-top { position: fixed; right: 26px; bottom: 26px; z-index: 15; display: grid; width: 44px; height: 44px; place-items: center; border: 1.5px solid var(--ink); border-radius: 50%; background: var(--yellow); color: #240b08; box-shadow: 3px 3px 0 var(--ink); cursor: pointer; font: 700 25px/1 "DM Sans", sans-serif; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .2s ease, transform .2s ease, box-shadow .2s ease; }
 .back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 .back-to-top:hover { box-shadow: 1px 1px 0 var(--ink); transform: translate(2px, 2px); }
+.analytics-consent { position: fixed; z-index: 25; left: 24px; bottom: 24px; width: min(390px, calc(100% - 48px)); padding: 22px; border: 1.5px solid var(--ink); background: var(--cream); box-shadow: 6px 6px 0 var(--yellow); }
+.analytics-consent .eyebrow { margin-bottom: 12px; }
+.analytics-consent > p:not(.eyebrow) { margin: 0; line-height: 1.5; }
+.analytics-consent div { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 19px; }
+.analytics-consent .button { padding: 11px 16px; }
 
 /* Now and Blog share the home page's editorial grid and type rhythm. */
 .notes { min-height: calc(100vh - 150px); padding: 100px 0 120px; }
@@ -82,4 +87,5 @@
   .hero-copy { max-width: 320px; font-size: 15px; }
   .hero-image, .code-card { z-index: 1; top: 685px; }
   .stats { bottom: -15px; z-index: 2; }
+  .analytics-consent { right: 16px; bottom: 16px; left: 16px; width: auto; padding: 19px; }
 }
